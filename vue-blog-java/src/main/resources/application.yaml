@@ -1,0 +1,27 @@
+spring:
+  datasource:
+    username: root
+    password: 12345678
+    url: jdbc:mysql://localhost:3306/springboot_vue_blog
+
+    # 热部署
+  devtools:
+    restart:
+      enabled: true  #设置开启热部署
+      additional-paths: src/main/java #重启目录
+      exclude: WEB-INF/**
+    freemarker:
+      cache: false    #页面不加载缓存，修改即时生效
+    thymeleaf:
+      encoding: utf-8
+      # 禁用缓存
+      cache: false
+
+mybatis-plus:
+  configuration:
+    # 配置日志（默认控制台输出）
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+mybatis:
+  # 扫描resources -> mapper目录下的所有xml文件
+  mapper-locations: classpath:mapper/*.xml
